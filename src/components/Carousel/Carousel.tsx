@@ -36,7 +36,7 @@ export type CarouselImageProps = {
 
 export function Carousel({ images }: CarouselImageProps) {
   const settings = {
-    dots: true,
+    //dots: true,
     infinite: true,
     speed: 500,
     autoplay: true,
