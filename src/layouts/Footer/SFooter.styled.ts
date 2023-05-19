@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import { colors } from "@src/assets/styles/colors/colors";
+import { bg_colors } from "@src/assets/styles/colors/colors";
+import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
+import { font_sizes } from "@src/assets/styles/fonts/fonts";
 
 export const SFooter = styled.footer`
   display: flex;
   flex-direction: column;
-  background-color: rgb(0, 33, 115);
-  color: white;
+  background-color: ${bg_colors.primary};
+  color: ${colors.secondary};
 `;
 
 export const SFooterTop = styled.div`
@@ -13,6 +17,13 @@ export const SFooterTop = styled.div`
   justify-content: space-between;
   padding: 12px 0;
   align-items: center;
+
+  & > h4 {
+    display: none;
+    @media (min-width: ${responsive_sizes.tablet}) {
+      display: block;
+    }
+  }
 
   & > div {
     display: flex;
@@ -23,7 +34,7 @@ export const SFooterTop = styled.div`
       cursor: pointer;
       padding: 6px;
       &:hover {
-        color: rgb(155 228 215);
+        color: ${colors.hover_text};
       }
     }
   }
@@ -38,22 +49,27 @@ export const SLine = styled.hr`
 
 export const SFooterContent = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   gap: 16px;
+
+  @media (min-width: ${responsive_sizes.tablet}) {
+    grid-template-columns: auto auto auto;
+    gap: 8px;
+  }
 
   & > div {
     padding: 8px 0;
 
     & > p {
       margin-bottom: 10px;
-      font-size: 16px;
+      font-size: ${font_sizes.large};
       font-weight: bold;
     }
 
     & > div {
       display: flex;
       flex-direction: column;
-      font-size: 14px;
+      font-size: ${font_sizes.medium};
       cursor: pointer;
       & > p {
         display: flex;
@@ -63,7 +79,7 @@ export const SFooterContent = styled.div`
         &:hover {
           transform: translateX(6px);
           transition: transform 0.2s ease-out;
-          color: rgb(155 228 215);
+          color: ${colors.hover_text};
         }
       }
     }
@@ -72,14 +88,20 @@ export const SFooterContent = styled.div`
 
 export const SFooterBottom = styled.div`
   display: flex;
-  gap: 24px;
   padding: 8px 0;
   justify-content: center;
-  font-size: 14px;
-  & > p {
-    cursor: pointer;
-    &:hover {
-      color: rgb(155 228 215);
+  align-items: center;
+  font-size: ${font_sizes.medium};
+  flex-direction: column;
+  gap: 8px;
+  .terms-n-policy {
+    display: flex;
+    gap: 24px;
+    &_item {
+      cursor: pointer;
+      &:hover {
+        color: rgb(155 228 215);
+      }
     }
   }
 `;

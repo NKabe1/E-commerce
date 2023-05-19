@@ -1,20 +1,40 @@
-
 import { SMainContainer } from "@src/components/MainContainer";
-import { BsFacebook, BsTwitter, BsLinkedin, BsInstagram, BsTelephone } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsTwitter,
+  BsLinkedin,
+  BsInstagram,
+  BsTelephone,
+} from "react-icons/bs";
 import { TfiEmail } from "react-icons/tfi";
-import { SFooter, SFooterTop, SFooterContent, SFooterBottom, SLine } from "./SFooter.styled";
+import {
+  SFooter,
+  SFooterTop,
+  SFooterContent,
+  SFooterBottom,
+  SLine,
+} from "./SFooter.styled";
 
 export function Footer() {
   return (
     <SFooter>
       <SMainContainer>
         <SFooterTop>
-          Connect with us on social media:
+          <h4>Connect with us on social media:</h4>
+          
           <div>
-            <p><BsFacebook /></p>
-            <p><BsTwitter /></p>
-            <p><BsLinkedin /></p>
-            <p><BsInstagram /></p>
+            <p>
+              <BsFacebook />
+            </p>
+            <p>
+              <BsTwitter />
+            </p>
+            <p>
+              <BsLinkedin />
+            </p>
+            <p>
+              <BsInstagram />
+            </p>
           </div>
         </SFooterTop>
         <SLine />
@@ -54,9 +74,12 @@ export function Footer() {
         </SFooterContent>
         <SLine />
         <SFooterBottom>
-          <p>Terms of Service</p>
-          <p>Privacy Policy</p>
-          <span>©2023 EShop, All rights reserved</span>
+          <div className="terms-n-policy">
+            <p className="terms-n-policy_item">Terms of Service</p>
+            <p>|</p>
+            <p className="terms-n-policy_item">Privacy Policy</p>
+          </div>
+          <p>©2023 EShop, All rights reserved</p>
         </SFooterBottom>
       </SMainContainer>
     </SFooter>
