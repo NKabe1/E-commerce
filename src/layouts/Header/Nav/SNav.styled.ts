@@ -1,0 +1,58 @@
+import styled from "styled-components";
+import { colors } from "@src/assets/styles/colors/colors";
+import { font_sizes } from "@src/assets/styles/fonts/fonts";
+import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
+
+export const SNav = styled.nav`
+  padding: 12px 0;
+`;
+
+export const SNavContent = styled.div`
+  color: ${colors.primary};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .menu-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    & > a {
+      & > img {
+        height: 50px;
+        @media (min-width: ${responsive_sizes.tablet}) {
+          height: 60px;
+        }
+      }
+    }
+  }
+
+  .link_pair {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    @media (min-width: 1280px) {
+      gap: 36px;
+    }
+
+    .link_to {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      &:hover {
+        color: ${colors.hover_w_lt_bg};
+      }
+      & > div {
+        font-size: ${font_sizes.extra_large};
+      }
+      & > h4 {
+        display: none;
+        @media (min-width: 1280px) {
+          display: block;
+        }
+      }
+    }
+  }
+`;

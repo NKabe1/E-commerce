@@ -1,7 +1,11 @@
+import { HeaderTop } from "./HeaderTop";
+import { Nav } from "./Nav";
 
-
-export  function Header() {
+export function Header() {
   return (
-    <div>This is Header</div>
-  )
+    <header>
+      <HeaderTop />
+      <Nav />
+    </header>
+  );
 }
