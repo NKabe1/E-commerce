@@ -12,4 +12,5 @@ export const bg_colors = {
   secondary: "white",
   dropdown_light: "rgba(0, 33, 115, 0.3)",
   dropdown_dark: "rgba(0, 33, 115, 0.6)",
+  hover_dark: "rgb(85, 0, 155)",
 };
