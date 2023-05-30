@@ -13,4 +13,5 @@ export const bg_colors = {
   dropdown_light: "rgba(0, 33, 115, 0.3)",
   dropdown_dark: "rgba(0, 33, 115, 0.6)",
   hover_dark: "rgb(85, 0, 155)",
+  primary_gray: "rgb(243 244 246)"
 };
