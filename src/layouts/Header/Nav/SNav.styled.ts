@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { colors } from "@src/assets/styles/colors/colors";
+import { bg_colors, colors } from "@src/assets/styles/colors/colors";
 import { font_sizes } from "@src/assets/styles/fonts/fonts";
 import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
 
@@ -41,6 +41,20 @@ export const SNavContent = styled.div`
       align-items: center;
       gap: 12px;
       cursor: pointer;
+      .cart-logo {
+        display: flex;
+        .quantity {
+          font-size: ${font_sizes.small};
+          font-weight: 700;
+          position: relative;
+          top: -12px;
+          right: 12px;
+          background-color: ${bg_colors.dropdown_light};
+          border-radius: 50px;
+          padding: 0 8px; 
+          margin-right: -22px;
+        }
+      }
       &:hover {
         color: ${colors.hover_w_lt_bg};
       }
