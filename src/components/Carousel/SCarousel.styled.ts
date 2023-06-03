@@ -1,26 +1,31 @@
 import styled from "styled-components";
+import { colors } from "@src/assets/styles/colors/colors";
+import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
 
 export const SCarouselWrapper = styled.div`
   width: 100%;
   max-height: 60vh;
 `;
 
-export const SCarouselImage = styled.img`
-  width: 100%;
-  max-height: 360px;
-  object-fit: cover;
-`;
-
 export const SCarouselArrow = styled.div<{ mode: "left" | "right" }>`
   display: block;
-  font-size: 36px;
-  color: white;
+  font-size: 24px;
+  @media (min-width: ${responsive_sizes.tablet}) {
+    font-size: 36px;
+  }
+  color: ${colors.secondary};
+  border: 1px solid ${colors.hover_text};
+  border-radius: 10px;
+  @media (min-width: ${responsive_sizes.tablet}) {
+    border-radius: 14px;
+  }
+  cursor: pointer;
   position: absolute;
   top: 50%;
   z-index: 10;
   &:hover {
-    color: rgb(71, 96, 114);
+    color: ${colors.hover_text};
   }
-  left: ${({ mode }) => mode === "left" && "2%"};
-  right: ${({ mode }) => mode === "right" && "2%"};
+  left: ${({ mode }) => mode === "left" && "3%"};
+  right: ${({ mode }) => mode === "right" && "3%"};
 `;
