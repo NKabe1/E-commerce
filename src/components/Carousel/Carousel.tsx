@@ -1,20 +1,16 @@
-import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { TbSquareRoundedArrowLeftFilled, TbSquareRoundedArrowRightFilled } from "react-icons/tb";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import {
-  SCarouselWrapper,
-  SCarouselImage,
-  SCarouselArrow,
-} from "./SCarousel.styled";
+import { SCarouselWrapper, SCarouselArrow } from "./SCarousel.styled";
 
 function PrevArrow({ style, onClick }: any) {
   return (
     <SCarouselArrow mode="left">
       <div style={{ ...style }} onClick={onClick}>
-        <SlArrowLeft />
+        <TbSquareRoundedArrowLeftFilled />
       </div>
     </SCarouselArrow>
   );
@@ -24,24 +20,25 @@ function NextArrow({ style, onClick }: any) {
   return (
     <SCarouselArrow mode="right">
       <div style={{ ...style }} onClick={onClick}>
-        <SlArrowRight />
+        <TbSquareRoundedArrowRightFilled />
       </div>
     </SCarouselArrow>
   );
 }
 
-export type CarouselImageProps = {
-  images: { image: string }[];
-};
+export interface CarouselProps {
+  children: React.ReactNode;
+  slidesToShow: number;
+}
 
-export function Carousel({ images }: CarouselImageProps) {
+export function Carousel({ children, slidesToShow }: CarouselProps) {
   const settings = {
     //dots: true,
     infinite: true,
     speed: 500,
     autoplay: true,
     autoplaySpeed: 4000,
-    slidesToShow: 1,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
@@ -49,15 +46,7 @@ export function Carousel({ images }: CarouselImageProps) {
 
   return (
     <SCarouselWrapper>
-      <Slider {...settings}>
-        {images.map((image, index) => {
-          return (
-            <div key={index}>
-              <SCarouselImage src={image.image} alt="image" />
-            </div>
-          );
-        })}
-      </Slider>
+      <Slider {...settings}>{children}</Slider>
     </SCarouselWrapper>
   );
 }

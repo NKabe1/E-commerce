@@ -28,7 +28,7 @@ export function ProductsList() {
       </h1>
       <SContainer>
         {products.map((product: any) => {
-          return <ProductCard product={product} key={product.id} />;
+          return <ProductCard product={product} key={product.id} margin={false}/>;
         })}
       </SContainer>
       <Pagination total={total} handlePageClick={handlePageClick} />

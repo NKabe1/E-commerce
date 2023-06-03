@@ -8,7 +8,6 @@ import { Button } from "../Button";
 import { CartModalContext } from "@src/contexts/CartModalContext";
 import { SuccessModal } from "../SuccessModal";
 
-
 type TProductCardProps = {
   product: {
     id: number;
@@ -18,9 +17,10 @@ type TProductCardProps = {
     rating: number;
     discountPercentage: number;
   };
+  margin: boolean;
 };
 
-export function ProductCard({ product }: TProductCardProps) {
+export function ProductCard({ product, margin }: TProductCardProps) {
   const { cartItems, setCartItems } = useContext(CartModalContext);
   const [showModal, setShowModal] = useState(false);
 
@@ -54,50 +54,59 @@ export function ProductCard({ product }: TProductCardProps) {
     }
   };
 
-  return (
-    <SProductCard>
-      <Link to={`/products/${product.id}`}>
-        <img src={product.thumbnail} className="img" />
-        {/* <Carousel images={{product.images}}/> */}
-        <div className="card-title">
-          <h5 className="product-info">{product.title}</h5>
-          <div className="product-info price">
-            <BsCurrencyDollar />
-            <h5>{product.price}</h5>
-          </div>
-        </div>
+  // scroll the page to the top
+  const handleProductClick = () => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
 
-        {(product?.discountPercentage ?? 0) > 0 &&
-          product?.price !== undefined && (
-            <div className="discount-info">
-              <div className="prev-price">
-                <BsCurrencyDollar />
-                <div>
-                  {Math.round(
-                    product.price / (1 - product.discountPercentage / 100)
-                  )}
+  return (
+    <SProductCard margin={margin}>
+      <div>
+        <Link to={`/products/${product.id}`} onClick={handleProductClick}>
+          <img src={product.thumbnail} className="img" />
+          {/* <Carousel images={{product.images}}/> */}
+          <div className="card-title">
+            <h5 className="product-info">{product.title}</h5>
+            <div className="product-info price">
+              <BsCurrencyDollar />
+              <h5>{product.price}</h5>
+            </div>
+          </div>
+
+          {(product?.discountPercentage ?? 0) > 0 &&
+            product?.price !== undefined && (
+              <div className="discount-info">
+                <div className="prev-price">
+                  <BsCurrencyDollar />
+                  <div>
+                    {Math.round(
+                      product.price / (1 - product.discountPercentage / 100)
+                    )}
+                  </div>
+                </div>
+                <div className="percentage">
+                  <div>{product.discountPercentage}</div>
+                  <BsPercent />
+                  <h5>off</h5>
                 </div>
               </div>
-              <div className="percentage">
-                <div>{product.discountPercentage}</div>
-                <BsPercent />
-                <h5>off</h5>
-              </div>
-            </div>
-          )}
-        <div className="rating">
-          <StarRating itemRating={product.rating} />
-        </div>
-      </Link>
-      <Button
-        onClick={() => {
-          handleAddProduct();
-          handleShowModal();
-        }}
-      >
-        Add to Cart
-        <FiShoppingCart />
-      </Button>
+            )}
+          <div className="rating">
+            <StarRating itemRating={product.rating} />
+          </div>
+        </Link>
+      </div>
+      <div>
+        <Button
+          onClick={() => {
+            handleAddProduct();
+            handleShowModal();
+          }}
+        >
+          Add to Cart
+          <FiShoppingCart />
+        </Button>
+      </div>
       <SuccessModal showModal={showModal}>Item added to cart!</SuccessModal>
     </SProductCard>
   );
