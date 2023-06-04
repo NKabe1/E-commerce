@@ -11,6 +11,7 @@ const ProductView = lazy(() => import("./views/ProductView"));
 const LoginView = lazy(() => import("./views/AuthView/LoginView"));
 const RegisterView = lazy(() => import("./views/AuthView/RegisterView"));
 const CartView = lazy(() => import("./views/CartView/CartView"));
+const CategoryView = lazy(() => import("./views/CategoryView/CategoryView"));
 
 function App() {
   const { status } = useContext(AuthContext);
@@ -33,6 +34,7 @@ function App() {
             <Route element={<MainLayout />}>
               <Route path="/" element={<HomeView />} />
               <Route path="/products" element={<ProductsView />} />
+              <Route path="/categories/:category" element={<CategoryView/>}/>
               <Route path="/products/:id" element={<ProductView />} />
               <Route path="/auth-login" element={<LoginView />} />
               <Route path="/auth-register" element={<RegisterView />} />
