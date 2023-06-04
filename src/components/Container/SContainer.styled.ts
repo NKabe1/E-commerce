@@ -5,13 +5,13 @@ export const SContainer = styled.div`
   display: grid;
   grid-template-columns:  auto;
   @media (min-width: ${responsive_sizes.tablet}) {
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
   }
   @media (min-width: ${responsive_sizes.desktop_small}) {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
   }
   @media (min-width: ${responsive_sizes.desktop_large}) {
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
   gap: 12px;
   padding: 12px 0;

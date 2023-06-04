@@ -58,7 +58,7 @@ export function NavDropdown() {
             {navCategories.map((category: any) => {
               return (
                 <li key={category.id}>
-                  <Link to={category.to}>{category.title}</Link>
+                  <Link to={category.to} onClick={() => setIsOpen(!isOpen)}>{category.title}</Link>
                 </li>
               );
             })}

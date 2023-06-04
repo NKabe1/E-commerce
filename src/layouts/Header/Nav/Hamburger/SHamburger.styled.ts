@@ -91,6 +91,6 @@ export const SHamburgerMenu = styled.div`
   .line {
     height: 1px;
     background-color: ${colors.hover_text};
-    margin: 4px 0;
+    margin: 4px 4px 0 0;
   }
 `;

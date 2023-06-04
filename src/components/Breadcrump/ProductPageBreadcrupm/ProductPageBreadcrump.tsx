@@ -22,9 +22,9 @@ export function ProductPageBreadcrump({ product }: BreadcrumpProps) {
             <span className="divider">/</span>
           </li>
           <li>
-            <Link to="#" className="link">
+            <Link to={`/categories/${product.category}`} className="link">
               {product.category.toUpperCase().slice(0, 1) +
-                product.category.slice(1, product.category.length + 1)}
+                product.category.slice(1, product.category.length)}
             </Link>
           </li>
           <li>
