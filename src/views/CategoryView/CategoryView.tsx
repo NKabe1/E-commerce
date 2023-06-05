@@ -4,12 +4,12 @@ import { SectionTitle } from "@src/components/SectionTitle";
 import { useGetProductsByCategory } from "@src/hooks/useGetProductsByCategory";
 import { CategoryPageBreadcrump } from "@src/components/Breadcrump/CategoryPageBreadcrump";
 import { MdOutlinePlace } from "react-icons/md";
-import { SCategoryTitle } from "./SCategoryView.styled";
+import { SCategoryView, SCategoryTitle } from "./SCategoryView.styled";
 
 export default function CategoryView() {
   const { categoryProducts, category } = useGetProductsByCategory();
   return (
-    <div>
+    <SCategoryView>
       {category && <CategoryPageBreadcrump category={category} />}
       <SCategoryTitle>
         <SectionTitle>
@@ -30,6 +30,6 @@ export default function CategoryView() {
           );
         })}
       </SContainer>
-    </div>
+    </SCategoryView>
   );
 }

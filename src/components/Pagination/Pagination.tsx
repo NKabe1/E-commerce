@@ -11,12 +11,22 @@ export function Pagination(props: TPaginationProps) {
   const { total } = props;
   const pageCount = Math.ceil(total / PaginationLimit);
 
+  const handlePageChange = (selected: number) => {
+    scrollToTop();
+    props.handlePageClick({ selected });
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  };
+
+
   return (
     <SPagination>
       <ReactPaginate
         breakLabel="..."
         nextLabel=">"
-        onPageChange={props.handlePageClick}
+        onPageChange={({ selected }) => handlePageChange(selected)}
         pageRangeDisplayed={3}
         marginPagesDisplayed={2}
         pageCount={pageCount}
