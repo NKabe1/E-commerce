@@ -1,65 +1,21 @@
-import styled, { css } from "styled-components";
-import { font_sizes } from "@src/assets/styles/fonts/fonts";
+import styled from "styled-components";
+import tw from "twin.macro";
 import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
-import { colors } from "@src/assets/styles/colors/colors";
 
 export const SSearchBar = styled.div`
-  display: flex;
-  align-items: center;
-  & > div {
+  & form {
     position: relative;
-    font-size: 20px;
-    cursor: pointer;
-    right: 16%;
-    @media (min-width: ${responsive_sizes.tablet}) {
-      right: 36px;
-    }
-    &.low-resolution {
-      display: block;
-      top: 6px;
-      @media (min-width: ${responsive_sizes.tablet}) {
-        display: none;
-      }
-    }
-    &.high-resolution {
-      display: none;
-      @media (min-width: ${responsive_sizes.tablet}) {
-        display: block;
-      }
-    }
   }
-  .warning_text {
-    display: none;
-    @media (min-width: ${responsive_sizes.tablet}) {
-      display: block;
-      color: ${colors.warning};
-      position: absolute;
-      top: 36px;
-      font-size: ${font_sizes.medium};
-    }
+  & input {
+    ${tw`bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pr-14`}
   }
-`;
-
-type SSearchInputProps = {
-  isInputValid: boolean;
-};
-
-export const SSearchInput = styled.input<SSearchInputProps>`
-  padding: 8px;
-  border: 1px solid
-    ${({ isInputValid }) => {
-      if (isInputValid) {
-        return css`
-          ${colors.light_text}
-        `;
-      } else {
-        return css`
-          ${colors.warning}
-        `;
-      }
-    }};
-  border-radius: 12px;
-
+  & button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    ${tw`flex items-center justify-center text-white bg-blue-900 hover:bg-purple-700 focus:ring-1 focus:outline-none focus:ring-blue-300 font-medium rounded-r-lg text-lg w-10 h-auto px-2 py-3 text-center`}
+  }
   &.high-resolution {
     display: none;
     @media (min-width: ${responsive_sizes.tablet}) {

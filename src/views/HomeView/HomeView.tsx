@@ -1,6 +1,6 @@
 import { SHomeView } from "./SHomeView.styled";
 import { HomeCarousel } from "./HomeCarousel";
-import { ProductsList } from "./ProductsList";
+import { TopProductsList } from "./TopProductsList";
 import { SectionTitle } from "@src/components/SectionTitle";
 import { Button } from "@src/components/Button";
 import { useNavigate } from "react-router-dom";
@@ -15,10 +15,10 @@ export default function HomeView() {
       <SHomeView>
         <HomeCarousel />
         <div className="product-title">
-          <SectionTitle>Products</SectionTitle>
+          <SectionTitle>Top Products</SectionTitle>
           <Button onClick={handleClick}>All Products</Button>
         </div>
-        <ProductsList />
+        <TopProductsList/>
       </SHomeView>
     </div>
   );

@@ -1,43 +1,46 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { CgSearch } from "react-icons/cg";
-import { SSearchBar, SSearchInput } from "./SSearchBar.styled";
+import { SSearchBar } from "./SSearchBar.styled";
+import { SearchBarContext } from "@src/contexts/SearchBarContext";
+import { PaginateContext } from "@src/contexts/PaginateContext";
 
-export function SearchBar({
-  className,
-}: {
+type TSearchBarProps = {
   className: "low-resolution" | "high-resolution";
-}) {
+};
+
+export function SearchBar({ className }: TSearchBarProps) {
   const [inputValue, setInputValue] = useState("");
-  const [isInputValid, setIsInputValid] = useState(true);
+  const navigate = useNavigate();
+  const { setSearchBarValue } = useContext(SearchBarContext);
+  const { setCurrentPage } = useContext(PaginateContext);
 
-  const searchHandler = (e: any) => {
+  const searchHandler = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setSearchBarValue(inputValue);
+    navigate(`/products?search=${inputValue}`);
+    setInputValue("");
+    setCurrentPage(0);
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
-    setIsInputValid(true);
   };
 
-  const handleSearchClick = () => {
-    if (inputValue === "") {
-      setIsInputValid(false);
-    } else {
-      console.log(inputValue);
-    }
-  };
   return (
-    <SSearchBar>
-      <SSearchInput
-        className={className}
-        isInputValid={isInputValid}
-        onChange={searchHandler}
-        type="text"
-        placeholder="Search product"
-        value={inputValue}
-      />
-      <div className={className}>
-        <CgSearch onClick={handleSearchClick} />
-      </div>
-      {isInputValid === false && (
-        <p className="warning_text">! Please fill out this field</p>
-      )}
+    <SSearchBar className={className}>
+      <form onSubmit={searchHandler}>
+        <input
+          type="text"
+          placeholder="Search Product"
+          value={inputValue}
+          onChange={handleInputChange}
+          required
+        />
+        <button type="submit">
+          <CgSearch />
+        </button>
+      </form>
     </SSearchBar>
   );
 }
