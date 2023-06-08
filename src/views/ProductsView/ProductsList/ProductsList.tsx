@@ -1,16 +1,10 @@
 import { useGetProducts } from "@src/hooks/useGetProducts";
 import { SContainer } from "@src/components/Container";
 import { ProductCard } from "@src/components/ProductCard";
-import { useGetTotalNumOfProducts } from "@src/hooks/useGetTotalNumOfProducts";
 import { Pagination } from "@src/components/Pagination";
-import { PaginationLimit } from "@src/components/Pagination/PaginationLimit";
 
 export function ProductsList() {
-  const { products, skip, setSkip } = useGetProducts();
-  const { total } = useGetTotalNumOfProducts();
-  const handlePageClick = (event: any) => {
-    setSkip(event.selected * PaginationLimit);
-  };
+  const { products, setSkip, numberOfProducts } = useGetProducts();
 
   return (
     <div>
@@ -21,7 +15,9 @@ export function ProductsList() {
           );
         })}
       </SContainer>
-      <Pagination total={total} handlePageClick={handlePageClick} />
+      {numberOfProducts && (
+        <Pagination total={numberOfProducts} setSkip={setSkip} />
+      )}
     </div>
   );
 }

@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import tw from "twin.macro";
 
 export const SProductCard = styled.div<{ margin: boolean }>`
-  ${tw`max-w-lg p-6 bg-gray-100 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200`}
+  ${tw`max-w-lg p-6 bg-gray-100 border border-gray-200 rounded-lg shadow hover:bg-gray-200`}
   ${({ margin }) =>
     margin &&
     css`
@@ -19,7 +19,7 @@ export const SProductCard = styled.div<{ margin: boolean }>`
     display: flex;
     justify-content: space-between;
     .product-info {
-      ${tw`mt-2 mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white`}
+      ${tw`mt-2 mb-2 text-lg font-bold tracking-tight text-gray-900`}
     }
     .price {
       display: flex;
