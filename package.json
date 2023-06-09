@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@types/react-star-ratings": "^2.3.0",
     "axios": "^1.4.0",
     "lodash": "^4.17.21",

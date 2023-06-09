@@ -14,8 +14,13 @@ import {
   SFooterBottom,
   SLine,
 } from "./SFooter.styled";
+import { Link } from "react-router-dom";
 
 export function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "auto" });
+  };
+  
   return (
     <SFooter>
       <SMainContainer>
@@ -68,7 +73,11 @@ export function Footer() {
                 <TfiEmail />
                 info@eshop.ge
               </p>
-              <p>Feedback</p>
+              <p>
+                <Link to={"/contact-us"} onClick={scrollToTop}>
+                  Feedback
+                </Link>
+              </p>
             </div>
           </div>
         </SFooterContent>
