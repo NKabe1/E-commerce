@@ -2,6 +2,7 @@ import { useRef, useState, MutableRefObject } from "react";
 import emailjs from "@emailjs/browser";
 import { SuccessModal } from "@src/components/SuccessModal";
 import { SContactUsView } from "./SContactUsView.styled";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function ContactUsView() {
   const form: MutableRefObject<HTMLFormElement | null> = useRef(null);
@@ -11,6 +12,7 @@ export default function ContactUsView() {
     message: "",
   });
   const [showModal, setShowModal] = useState(false);
+  const {formatMessage} = useIntl();
 
   const handleChange = (event: any) => {
     const value = event.target.value;
@@ -54,14 +56,13 @@ export default function ContactUsView() {
     <div>
       <SContactUsView>
         <div className="main-div">
-          <h2 className="title">Contact Us</h2>
+          <h2 className="title"><FormattedMessage id="contact_us"/></h2>
           <p className="sub-title">
-            Got a question? Want to send feedback? Need delivery details? Let us
-            know.
+            <FormattedMessage id="question_title"/>
           </p>
           <form className="form" ref={form} onSubmit={sendEmail}>
             <div className="form-section">
-              <label className="label">Your email*</label>
+              <label className="label"><FormattedMessage id="email"/></label>
               <input
                 type="email"
                 id="contact-email"
@@ -74,37 +75,37 @@ export default function ContactUsView() {
               />
             </div>
             <div className="form-section">
-              <label className="label">Subject*</label>
+              <label className="label"><FormattedMessage id="subject"/></label>
               <input
                 type="text"
                 id="subject"
                 name="subject"
                 value={feedbackValues.subject}
                 className="input-subject"
-                placeholder="Let us know how we can help you"
+                placeholder={formatMessage({id: "contact_us_placeholder"})}
                 required
                 onChange={handleChange}
               />
             </div>
             <div className="msg-section form-section">
-              <label className="label">Your message</label>
+              <label className="label"><FormattedMessage id="your_message"/></label>
               <textarea
                 id="message"
                 name="message"
                 value={feedbackValues.message}
                 rows={6 as number}
                 className="input-message"
-                placeholder="Leave a comment..."
+                placeholder={formatMessage({id: "comment_placeholder"})}
                 onChange={handleChange}
               ></textarea>
             </div>
             <button type="submit" className="btn">
-              Send message
+              <FormattedMessage id="send_message"/>
             </button>
           </form>
         </div>
       </SContactUsView>
-      <SuccessModal showModal={showModal}>Your email is sent!</SuccessModal>
+      <SuccessModal showModal={showModal}><FormattedMessage id="message_sent"/></SuccessModal>
     </div>
   );
 }

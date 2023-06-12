@@ -15,6 +15,7 @@ import {
   SLine,
 } from "./SFooter.styled";
 import { Link } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -25,7 +26,7 @@ export function Footer() {
     <SFooter>
       <SMainContainer>
         <SFooterTop>
-          <h4>Connect with us on social media:</h4>
+          <h4><FormattedMessage id="connect_w_us"/></h4>
           
           <div>
             <p>
@@ -45,25 +46,25 @@ export function Footer() {
         <SLine />
         <SFooterContent>
           <div>
-            <p>About Us</p>
+            <p><FormattedMessage id="about_us"/></p>
             <div>
-              <p> About EShop</p>
-              <p>Careers</p>
-              <p>Affiliate & Partners</p>
-              <p>Help</p>
+              <p><FormattedMessage id="about_eshop"/></p>
+              <p><FormattedMessage id="carrers"/></p>
+              <p><FormattedMessage id="partners"/></p>
+              <p><FormattedMessage id="help"/></p>
             </div>
           </div>
           <div>
-            <p>Services</p>
+            <p><FormattedMessage id="services"/></p>
             <div>
-              <p> Gift Card</p>
-              <p>Mobile App</p>
-              <p>Shipping and delivery</p>
-              <p>Order Pickup</p>
+              <p><FormattedMessage id="gift"/></p>
+              <p><FormattedMessage id="app"/></p>
+              <p><FormattedMessage id="delivery"/></p>
+              <p><FormattedMessage id="pick_up"/></p>
             </div>
           </div>
           <div>
-            <p>Contact Us</p>
+            <p><FormattedMessage id="contact"/></p>
             <div>
               <p>
                 <BsTelephone />
@@ -75,7 +76,7 @@ export function Footer() {
               </p>
               <p>
                 <Link to={"/contact-us"} onClick={scrollToTop}>
-                  Feedback
+                  <FormattedMessage id="feedback"/>
                 </Link>
               </p>
             </div>

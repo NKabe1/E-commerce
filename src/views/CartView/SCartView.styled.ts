@@ -16,6 +16,17 @@ export const SCartView = styled.div`
   margin-bottom: 24px;
   .item-list-section {
     flex: 1;
+    .list-header {
+      display: grid;
+      grid-template-columns: 5fr 3fr auto;
+      padding: 16px 24px;
+      background-color: ${bg_colors.primary_gray};
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .clear-btn{
+      margin-top: 32px;
+    }
     .empty-cart {
       display: flex;
       background-color: ${bg_colors.primary_gray};

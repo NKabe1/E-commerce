@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../Button";
 import { CartModalContext } from "@src/contexts/CartModalContext";
 import { SuccessModal } from "../SuccessModal";
+import { FormattedMessage } from "react-intl";
 
 type TProductCardProps = {
   product: {
@@ -103,11 +104,11 @@ export function ProductCard({ product, margin }: TProductCardProps) {
             handleShowModal();
           }}
         >
-          Add to Cart
+          <FormattedMessage id="add_to_cart"/>
           <FiShoppingCart />
         </Button>
       </div>
-      <SuccessModal showModal={showModal}>Item added to cart!</SuccessModal>
+      <SuccessModal showModal={showModal}><FormattedMessage id="added_to_cart"/></SuccessModal>
     </SProductCard>
   );
 }

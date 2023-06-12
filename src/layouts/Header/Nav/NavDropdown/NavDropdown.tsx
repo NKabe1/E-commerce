@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { navCategories } from "../navCategories/navCategories";
 import { SNavDropdown } from "./SNavDropdown.styled";
+import { FormattedMessage } from "react-intl";
 
 export function NavDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,7 @@ export function NavDropdown() {
           data-dropdown-toggle="dropdown"
           onClick={handleToggle}
         >
-          Categories
+          <FormattedMessage id="categories"/>
           <svg
             fill="none"
             stroke="currentColor"

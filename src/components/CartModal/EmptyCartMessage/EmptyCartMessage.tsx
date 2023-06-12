@@ -1,5 +1,6 @@
 import { BsCartX } from "react-icons/bs";
 import { SEmptyCartMessage } from "./SEmptyCartMessage.styled";
+import { FormattedMessage } from "react-intl";
 
 export function EmptyCartMessage() {
   return (
@@ -7,7 +8,7 @@ export function EmptyCartMessage() {
       <div className="icon">
         <BsCartX />
       </div>
-      <div>Cart is empty</div>
+      <div><FormattedMessage id="empty_cart"/></div>
     </SEmptyCartMessage>
   );
 }

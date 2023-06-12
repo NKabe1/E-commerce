@@ -17,6 +17,7 @@ import {
 import { SectionTitle } from "@src/components/SectionTitle";
 import { SimilarProducts } from "./SimilarProducts";
 import { ProductPageBreadcrump } from "@src/components/Breadcrump/ProductPageBreadcrupm";
+import { FormattedMessage } from "react-intl";
 
 type TProduct = {
   id: number;
@@ -166,14 +167,14 @@ export default function ProductView() {
 
             {product?.stock !== undefined && product.stock < 12 ? (
               <div className="stock-shortage">
-                <p> Only</p>
-                <p className="left-quantity">{product.stock} items</p>
-                <p> left! Don't miss it</p>
+                <p><FormattedMessage id="only"/></p>
+                <p className="left-quantity">{product.stock} <FormattedMessage id="items"/></p>
+                <p><FormattedMessage id="left"/></p>
               </div>
             ) : (
               <div className="in-stock">
                 <MdOutlinePlace className="in-stock_icon" />
-                <p>In Stock</p>
+                <p><FormattedMessage id="in_stock"/></p>
               </div>
             )}
           </div>
@@ -185,7 +186,7 @@ export default function ProductView() {
                 handleShowModal();
               }}
             >
-              Add to Cart
+              <FormattedMessage id="add_to_cart"/>
               <FiShoppingCart />
             </Button>
 
@@ -196,24 +197,24 @@ export default function ProductView() {
                 handleMoveToLink();
               }}
             >
-              Buy Now
+              <FormattedMessage id="buy"/>
             </Button>
           </div>
           <div className="line"></div>
           <div className="ps">
             <FiTruck className="ps_icon" />
-            Free Delivery
+            <FormattedMessage id="free_delivery"/>
           </div>
           <div className="ps">
             <MdOutlineEnergySavingsLeaf className="ps_icon" />
-            Long-term Warranty
+            <FormattedMessage id="warranty"/>
           </div>
         </div>
-        <SuccessModal showModal={showModal}>Item added to cart!</SuccessModal>
+        <SuccessModal showModal={showModal}><FormattedMessage id="added_to_cart"/></SuccessModal>
       </SProductView>
 
       <SSimilarProducts>
-        <SectionTitle>Similar products</SectionTitle>
+        <SectionTitle><FormattedMessage id="similar_products"/></SectionTitle>
         {product && <SimilarProducts product={product} />}
       </SSimilarProducts>
     </>
