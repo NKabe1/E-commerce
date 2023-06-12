@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { public_axios } from "@src/utils/public_axios";
 import { Link } from "react-router-dom";
 import { SSection, SForm } from "./SRegisterView.styled";
+import { FormattedMessage } from "react-intl";
 
 type TRegisterInputs = {
   username: string;
@@ -39,10 +40,14 @@ export default function RegisterView() {
       <div>
         <div>
           <div>
-            <h1>Create an account</h1>
+            <h1>
+              <FormattedMessage id="create_account" />
+            </h1>
             <SForm onSubmit={handleSubmit(onSubmit)} action="#">
               <div>
-                <label>Your username</label>
+                <label>
+                  <FormattedMessage id="user_name" />
+                </label>
                 <input
                   {...register("username", { required: true })}
                   type="username"
@@ -53,28 +58,36 @@ export default function RegisterView() {
               </div>
               {errors.username && (
                 <p className="error-msg">
-                  <span className="font-medium">Error: </span> Username is
-                  required
+                  <span className="font-medium">
+                    <FormattedMessage id="error" />{" "}
+                  </span>{" "}
+                  <FormattedMessage id="user_name_required" />
                 </p>
               )}
               <div>
-                <label>Your email</label>
+                <label>
+                  <FormattedMessage id="your_email" />
+                </label>
                 <input
                   {...register("email", { required: true })}
                   type="email"
                   name="email"
                   id="email"
-                  placeholder="name@company.com"
+                  placeholder="name@eshop.ge"
                 />
                 {errors.email && (
                   <p className="error-msg">
-                    <span className="font-medium">Error: </span> Email is
-                    required
+                    <span className="font-medium">
+                      <FormattedMessage id="error" />{" "}
+                    </span>{" "}
+                    <FormattedMessage id="email_required" />
                   </p>
                 )}
               </div>
               <div>
-                <label>Password</label>
+                <label>
+                  <FormattedMessage id="password" />
+                </label>
                 <input
                   {...register("password", { required: true })}
                   type="password"
@@ -84,14 +97,16 @@ export default function RegisterView() {
                 />
                 {errors.password && (
                   <p className="error-msg">
-                    <span className="font-medium">Error: </span> Password is
-                    required
+                    <span className="font-medium">
+                      <FormattedMessage id="error" />{" "}
+                    </span>{" "}
+                    <FormattedMessage id="password_required" />
                   </p>
                 )}
               </div>
               {errors?.root && (
                 <p className="error-msg">
-                  <span className="font-medium">Error: </span>
+                  <span className="font-medium"><FormattedMessage id="error"/> </span>
                   {errors.root.message}
                 </p>
               )}
@@ -101,23 +116,23 @@ export default function RegisterView() {
                 </div>
                 <div className="div-text">
                   <label>
-                    I accept the <a href="#">Terms and Conditions</a>
+                    <FormattedMessage id="accept"/> <a href="#"><FormattedMessage id="terms_conditions"/></a>
                   </label>
                 </div>
               </div>
-              <button type="submit">Create an account</button>
+              <button type="submit"><FormattedMessage id="create_account"/></button>
               {created && (
                 <p className="success-msg">
                   <span className="font-medium">
-                    Account created successfully
+                    <FormattedMessage id="account_created"/>
                   </span>
                   !
                 </p>
               )}
               <p className="login">
-                Already have an account?{" "}
+                <FormattedMessage id="having_account"/>{" "}
                 <Link to="/auth-login" className="link">
-                  Login here
+                  <FormattedMessage id="login"/>
                 </Link>
               </p>
             </SForm>

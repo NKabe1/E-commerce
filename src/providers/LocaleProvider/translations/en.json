@@ -1,0 +1,117 @@
+{
+    "header------------------------": "ჰედერის სექცია",
+    "discover": "Discover new products",
+    "shop_now": "Shop now",
+    "categories": "Categories",
+    "search_placeholder": "Search Product",
+    "authorization": "Authorization",
+    "cart": "Cart",
+
+
+    "auth--------------------------": "ავტორიზაციის სექცია",
+    "sign_in_header": "Sign in to your account",
+    "your_email": "Your email",
+    "password": "Password",
+    "error": "Error:",
+    "request_text": "Email and password is required",
+    "incorrect": "Email or password is incorrect",
+    "remember_me": "Remember me",
+    "forgot_pass": "Forgot password?",
+    "sign_in": "Sign in",
+    "not_having_account": "Don't have an account yet?",
+    "sign_up": "Sign up",
+    "create_account": "Create an account",
+    "user_name": "Your username",
+    "user_name_required": "Username is required",
+    "email_required": "Email is required",
+    "password_required": "Password is required",
+    "accept": "I accept the",
+    "terms_conditions": "Terms and Conditions",
+    "account_created": "Account created successfully",
+    "having_account": "Already have an account?",
+    "login": "Login here",
+
+
+    "navCategories-----------------": "კატეგორიების სექცია",
+    "categories.smartphones": "Smartphones",
+    "categories.laptops": "Laptops",
+    "categories.fragrances": "Fragrances",
+
+
+    "breadcrump--------------------": "breadcramp-ის სექცია",
+    "home": "Home",
+
+
+    "cart--------------------------": "cart-ის სექცია",
+    "empty_cart": "Cart is empty",
+    "go_to_cart": "Go to Cart",
+    "clear_cart": "Clear Cart",
+    "sum": "Sum",
+    "total_price": "Total price:",
+    "buy": "Buy Now",
+    "product": "Product",
+    "price": "Price",
+
+
+    "product-cart------------------": "product-cart-ის სექცია",
+    "add_to_cart": "Add to Cart",
+    "added_to_cart": "Item added to cart!",
+
+
+    "success-modal-----------------": "success-modal-ის სექცია",
+    "success": "Successful!",
+
+
+    "category----------------------": "category-ის სექცია",
+    "in_stock": "In Stock",
+
+
+    "contact-us--------------------": "contact-us სექცია",
+    "contact_us": "Contact Us",
+    "question_title": "Got a question? Want to send feedback? Need delivery details? Let us know.",
+    "email": "Your email*",
+    "subject": "Subject*",
+    "contact_us_placeholder": "Let us know how we can help you",
+    "your_message": "Your message",
+    "comment_placeholder": "Leave a comment...",
+    "send_message": "Send message",
+    "message_sent": "Your message is sent!",
+
+
+    "home-view---------------------": "homeview სექცია",
+    "top_products": "Top Products",
+    "all_products": "All Products",
+
+
+    "search-view-------------------": "search-view სექცია",
+    "search_results": "Search results:",
+    "found": "Found",
+    "products": "products for",
+    "no_results": "No products found",
+
+
+    "product-view------------------": "product view სექცია",
+    "only": "Only",
+    "items": "items",
+    "left": "left! Don't miss it",
+    "free_delivery": "Free Delivery",
+    "warranty": "Long-term Warranty",
+    "similar_products": "Similar products",
+
+
+    "footer------------------------": "footer-ის სექცია",
+    "connect_w_us": "Connect with us on social media:",
+    "about_us": "About Us",
+    "about_eshop": "About EShop",
+    "carrers": "Careers",
+    "partners": "Affiliate & Partners",
+    "help": "Help",
+    "services": "Services",
+    "gift": "Gift Card",
+    "app": "Mobile App",
+    "delivery": "Shipping and delivery",
+    "pick_up": "Order Pickup",
+    "contact": "Contact Us",
+    "feedback": "Feedback"
+
+}

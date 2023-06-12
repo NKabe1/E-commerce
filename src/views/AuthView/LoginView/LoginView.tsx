@@ -5,6 +5,7 @@ import { public_axios } from "@src/utils/public_axios";
 import { TLocalStorage } from "@src/types/localstorage";
 import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
 import { SSection, SForm, SDiv } from "./SLoginView.styled";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type TLoginInputs = {
   email: string;
@@ -37,20 +38,26 @@ export default function LoginView() {
       <div>
         <div>
           <div>
-            <h1>Sign in to your account</h1>
+            <h1>
+              <FormattedMessage id="sign_in_header" />
+            </h1>
             <SForm onSubmit={handleSubmit(onSubmit)} action="#">
               <div>
-                <label>Your email</label>
+                <label>
+                  <FormattedMessage id="your_email" />
+                </label>
                 <input
                   {...register("email", { required: true })}
                   type="email"
                   name="email"
                   id="login-email"
-                  placeholder="name@company.com"
+                  placeholder="name@eshop.ge"
                 />
               </div>
               <div>
-                <label>Password</label>
+                <label>
+                  <FormattedMessage id="password" />
+                </label>
                 <input
                   {...register("password", { required: true })}
                   type="password"
@@ -60,15 +67,19 @@ export default function LoginView() {
                 />
                 {(errors.password || errors.email) && (
                   <p className="error-msg">
-                    <span className="font-medium">Error: </span> Email and
-                    password is required
+                    <span className="font-medium">
+                      <FormattedMessage id="error" />{" "}
+                    </span>{" "}
+                    <FormattedMessage id="request_text" />
                   </p>
                 )}
               </div>
               {errors?.root && (
                 <p className="error-msg">
-                  <span className="font-medium">Error: </span> Email or password
-                  is incorrect
+                  <span className="font-medium">
+                    <FormattedMessage id="error" />{" "}
+                  </span>{" "}
+                  <FormattedMessage id="incorrect" />
                 </p>
               )}
               <SDiv>
@@ -81,17 +92,17 @@ export default function LoginView() {
                     />
                   </div>
                   <div className="label-div">
-                    <label>Remember me</label>
+                    <label><FormattedMessage id="remember_me"/></label>
                   </div>
                 </div>
-                <a href="#">Forgot password?</a>
+                <a href="#"><FormattedMessage id="forgot_pass"/></a>
               </SDiv>
 
-              <button type="submit">Sign in</button>
+              <button type="submit"><FormattedMessage id="sign_in"/></button>
               <p>
-                Don't have an account yet?{" "}
+                <FormattedMessage id="not_having_account"/>{" "}
                 <Link to="/auth-register" className="link">
-                  Sign up
+                  <FormattedMessage id="sign_up"/>
                 </Link>
               </p>
             </SForm>

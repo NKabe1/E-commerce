@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { SSuccessModal } from "./SSuccessModal.styled";
+import { FormattedMessage } from "react-intl";
 
 type SuccessModalProps = {
   showModal: boolean;
@@ -28,7 +29,7 @@ export function SuccessModal({ showModal, children }: SuccessModalProps) {
                 ></path>
               </svg>
             </div>
-            <h3 className="text-main">Successful!</h3>
+            <h3 className="text-main"><FormattedMessage id="success"/></h3>
             <div className="text-info">
               <p className="message">{children}</p>
             </div>

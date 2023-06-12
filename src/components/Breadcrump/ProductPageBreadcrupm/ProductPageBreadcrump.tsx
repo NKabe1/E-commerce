@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SProductPageBreadcrump } from "./SProductPageBreadcrump.styled";
+import { FormattedMessage, useIntl } from "react-intl";
 
 type BreadcrumpProps = {
   product: {
@@ -9,13 +10,16 @@ type BreadcrumpProps = {
 };
 
 export function ProductPageBreadcrump({ product }: BreadcrumpProps) {
+  const intl = useIntl();
+  const translatedCategory = intl.formatMessage({ id: `categories.${product.category}` });
+  
   return (
     <SProductPageBreadcrump>
       <nav>
         <ol>
           <li>
             <Link to="/" className="link">
-              Home
+              <FormattedMessage id="home"/>
             </Link>
           </li>
           <li>
@@ -23,8 +27,8 @@ export function ProductPageBreadcrump({ product }: BreadcrumpProps) {
           </li>
           <li>
             <Link to={`/categories/${product.category}`} className="link">
-              {product.category.toUpperCase().slice(0, 1) +
-                product.category.slice(1, product.category.length)}
+              {translatedCategory.toUpperCase().slice(0, 1) +
+                translatedCategory.slice(1)}
             </Link>
           </li>
           <li>

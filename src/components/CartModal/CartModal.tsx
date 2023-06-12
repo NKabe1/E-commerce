@@ -8,6 +8,7 @@ import { CgCloseR } from "react-icons/cg";
 import { BsCurrencyDollar, BsCartX } from "react-icons/bs";
 import { useOnClickOutside } from "@src/hooks/useOnClickOutside";
 import { SCartModalWrapper, SModalOverlay } from "./SCartModal.styles";
+import { FormattedMessage } from "react-intl";
 
 type cartModalProps = {
   open: boolean;
@@ -35,7 +36,7 @@ export function CartModal({ open, onClose }: cartModalProps) {
               <div ref={cartModalRef} className="modal-content">
                 {/*header*/}
                 <div className="header">
-                  <h3 className="title">Cart</h3>
+                  <h3 className="title"><FormattedMessage id="cart"/></h3>
                   <button className="button" onClick={onClose}>
                     <span className="icon">
                       <CgCloseR />
@@ -56,7 +57,7 @@ export function CartModal({ open, onClose }: cartModalProps) {
                 {/*footer*/}
                 {cartItems.length > 0 && (
                   <div className="total-price">
-                    <h4>Total price:</h4>
+                    <h4><FormattedMessage id="total_price"/></h4>
                     <div className="amount">
                       <BsCurrencyDollar />
                       {cartItems.reduce((total, cartItem) => {
@@ -71,7 +72,7 @@ export function CartModal({ open, onClose }: cartModalProps) {
                       onClose(), navigate("/cart");
                     }}
                   >
-                    Go to Cart
+                    <FormattedMessage id="go_to_cart"/>
                   </Button>
                 </div>
               </div>

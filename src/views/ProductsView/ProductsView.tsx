@@ -5,6 +5,7 @@ import { useGetTotalNumOfProducts } from "@src/hooks/useGetTotalNumOfProducts";
 import { useGetProducts } from "@src/hooks/useGetProducts";
 import { SearchBarContext } from "@src/contexts/SearchBarContext";
 import { SNotification, SNoProducts } from "./SProductsView.styled";
+import { FormattedMessage } from "react-intl";
 
 export default function ProductsView() {
   const { total } = useGetTotalNumOfProducts();
@@ -13,17 +14,17 @@ export default function ProductsView() {
   return (
     <div>
       {typeof numberOfProducts === "undefined" || total <= numberOfProducts ? (
-        <SectionTitle>All Products</SectionTitle>
+        <SectionTitle><FormattedMessage id="all_products"/></SectionTitle>
       ) : numberOfProducts > 0 && total > numberOfProducts ? (
         <div>
-          <SectionTitle>Search results:</SectionTitle>
+          <SectionTitle><FormattedMessage id="search_results"/></SectionTitle>
           <SNotification mode="positive">
-            Found {numberOfProducts} products for "{searchBarValue}"
+            <FormattedMessage id="found"/> {numberOfProducts} <FormattedMessage id="products"/> "{searchBarValue}"
           </SNotification>
         </div>
       ) : (
         <SNoProducts>
-          <SectionTitle>No products found</SectionTitle>
+          <SectionTitle><FormattedMessage id="no_results"/></SectionTitle>
           <SNotification mode="negative">"{searchBarValue}"</SNotification>
         </SNoProducts>
       )}

@@ -1,13 +1,16 @@
+import { ReactNode } from "react";
+import { FormattedMessage } from "react-intl";
+
 export type TCategory = {
   id: string;
-  title: string;
+  title: ReactNode;
   to: string;
 };
 
 export const navCategories: TCategory[] = [
-  { id: "1", title: "Smartphones", to: "/categories/smartphones" },
-  { id: "2", title: "Laptops", to: "/categories/laptops" },
-  { id: "3", title: "Fragrances", to: "/categories/fragrances" },
+  { id: "1", title: <FormattedMessage id="categories.smartphones" />, to: "/categories/smartphones" },
+  { id: "2", title: <FormattedMessage id="categories.laptops"/>, to: "/categories/laptops" },
+  { id: "3", title: <FormattedMessage id="categories.fragrances"/>, to: "/categories/fragrances" },
   { id: "4", title: "Skincare", to: "/categories/skincare" },
   { id: "5", title: "Groceries", to: "/categories/groceries" },
   { id: "6", title: "Home-decoration", to: "/categories/home-decoration" },

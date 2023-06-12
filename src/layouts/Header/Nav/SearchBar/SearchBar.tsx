@@ -4,6 +4,7 @@ import { CgSearch } from "react-icons/cg";
 import { SSearchBar } from "./SSearchBar.styled";
 import { SearchBarContext } from "@src/contexts/SearchBarContext";
 import { PaginateContext } from "@src/contexts/PaginateContext";
+import { useIntl } from "react-intl";
 
 type TSearchBarProps = {
   className: "low-resolution" | "high-resolution";
@@ -14,6 +15,7 @@ export function SearchBar({ className }: TSearchBarProps) {
   const navigate = useNavigate();
   const { setSearchBarValue } = useContext(SearchBarContext);
   const { setCurrentPage } = useContext(PaginateContext);
+  const {formatMessage} = useIntl();
 
   const searchHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,7 +34,7 @@ export function SearchBar({ className }: TSearchBarProps) {
       <form onSubmit={searchHandler}>
         <input
           type="text"
-          placeholder="Search Product"
+          placeholder={formatMessage({id: "search_placeholder"})}
           value={inputValue}
           onChange={handleInputChange}
           required

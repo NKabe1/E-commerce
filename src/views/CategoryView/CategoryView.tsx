@@ -5,21 +5,25 @@ import { useGetProductsByCategory } from "@src/hooks/useGetProductsByCategory";
 import { CategoryPageBreadcrump } from "@src/components/Breadcrump/CategoryPageBreadcrump";
 import { MdOutlinePlace } from "react-icons/md";
 import { SCategoryView, SCategoryTitle } from "./SCategoryView.styled";
+import { FormattedMessage, useIntl } from "react-intl";
 
 export default function CategoryView() {
   const { categoryProducts, category } = useGetProductsByCategory();
+  const intl = useIntl();
+  const translatedCategory = intl.formatMessage({ id: `categories.${category}` });
+  
   return (
     <SCategoryView>
       {category && <CategoryPageBreadcrump category={category} />}
       <SCategoryTitle>
         <SectionTitle>
           {category &&
-            category?.toUpperCase().slice(0, 1) +
-              category?.slice(1, category.length)}
+            translatedCategory?.toUpperCase().slice(0, 1) +
+              translatedCategory?.slice(1)}
         </SectionTitle>
         <div className="in-stock">
           <MdOutlinePlace className="in-stock_icon" />
-          <p>In Stock</p>
+          <p><FormattedMessage id="in_stock"/></p>
         </div>
       </SCategoryTitle>
 

@@ -4,6 +4,7 @@ import { TopProductsList } from "./TopProductsList";
 import { SectionTitle } from "@src/components/SectionTitle";
 import { Button } from "@src/components/Button";
 import { useNavigate } from "react-router-dom";
+import { FormattedMessage } from "react-intl";
 
 export default function HomeView() {
   const navigate = useNavigate();
@@ -15,8 +16,8 @@ export default function HomeView() {
       <SHomeView>
         <HomeCarousel />
         <div className="product-title">
-          <SectionTitle>Top Products</SectionTitle>
-          <Button onClick={handleClick}>All Products</Button>
+          <SectionTitle><FormattedMessage id="top_products"/></SectionTitle>
+          <Button onClick={handleClick}><FormattedMessage id="all_products"/></Button>
         </div>
         <TopProductsList/>
       </SHomeView>

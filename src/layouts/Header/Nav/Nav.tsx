@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { FiUser } from "react-icons/fi";
 import { FiShoppingCart } from "react-icons/fi";
-import logo from "@src/assets/logo/logo-eshop.png";
+import logo from "@src/assets/logo/logo_eshop.png";
 import { NavDropdown } from "./NavDropdown";
 import { SMainContainer } from "@src/components/MainContainer";
 import { SNav, SNavContent } from "./SNav.styled";
@@ -10,6 +10,7 @@ import { Hamburger } from "./Hamburger/Hamburger";
 import { SearchBar } from "./SearchBar";
 import { CartModal } from "@src/components/CartModal";
 import { CartModalContext } from "@src/contexts/CartModalContext";
+import { FormattedMessage } from "react-intl";
 
 export function Nav() {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -32,7 +33,7 @@ export function Nav() {
               <div>
                 <FiUser />
               </div>
-              <h4>Authorization</h4>
+              <h4><FormattedMessage id="authorization"/></h4>
             </Link>
             <div className="link_to" onClick={() => setShowModal(true)}>
               <div className="cart-logo">
@@ -43,7 +44,7 @@ export function Nav() {
                   }, 0)}
                 </div>}
               </div>
-              <h4>Cart</h4>
+              <h4><FormattedMessage id="cart"/></h4>
             </div>
           </div>
         </SNavContent>

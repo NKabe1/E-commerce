@@ -30,9 +30,10 @@ export const SNavContent = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 24px;
     gap: 12px;
     @media (min-width: 1280px) {
-      gap: 36px;
+      gap: 24px;
     }
 
     .link_to {
