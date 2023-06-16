@@ -18,12 +18,9 @@ export const SSearchBar = styled.div`
   }
   &.high-resolution {
     display: none;
-    @media (min-width: ${responsive_sizes.tablet}) {
-      display: block;
-      width: 240px;
-    }
 
     @media (min-width: ${responsive_sizes.desktop_small}) {
+      display: block;
       width: 400px;
     }
 
@@ -38,7 +35,7 @@ export const SSearchBar = styled.div`
   &.low-resolution {
     margin: 12px auto auto;
     width: 80%;
-    @media (min-width: ${responsive_sizes.tablet}) {
+    @media (min-width: ${responsive_sizes.desktop_small}) {
       display: none;
     }
   }

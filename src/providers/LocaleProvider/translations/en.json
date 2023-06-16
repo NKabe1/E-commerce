@@ -81,6 +81,15 @@
     "home-view---------------------": "homeview სექცია",
     "top_products": "Top Products",
     "all_products": "All Products",
+    "order": "Georgian-wide Ordering",
+    "contact_24/7": "Contact Us 24/7",
+
+
+    "cookie-modal------------------": "cookie მოდალი",
+    "cookie_info": "We use cookies to ensure that we give you the best experience on our website.",
+    "cookie_policy": " Read cookie policy",
+    "cookie_settings": "Cookie Settings",
+    "ok": "Ok",
 
 
     "search-view-------------------": "search-view სექცია",
@@ -107,7 +116,7 @@
     "partners": "Affiliate & Partners",
     "help": "Help",
     "services": "Services",
-    "gift": "Gift Card",
+    "gift": "Gift Cards",
     "app": "Mobile App",
     "delivery": "Shipping and delivery",
     "pick_up": "Order Pickup",

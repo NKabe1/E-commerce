@@ -2,19 +2,15 @@ import styled from "styled-components";
 import { colors } from "@src/assets/styles/colors/colors";
 import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
 
-export const SCarouselWrapper = styled.div`
-  width: 100%;
-  max-height: 60vh;
-`;
 
 export const SCarouselArrow = styled.div<{ mode: "left" | "right" }>`
-  display: block;
+  display: none;
   font-size: 24px;
   @media (min-width: ${responsive_sizes.tablet}) {
     font-size: 36px;
   }
   color: ${colors.secondary};
-  border: 1px solid ${colors.hover_text};
+  border: 2px solid ${colors.hover_text};
   border-radius: 10px;
   @media (min-width: ${responsive_sizes.tablet}) {
     border-radius: 14px;
@@ -28,4 +24,13 @@ export const SCarouselArrow = styled.div<{ mode: "left" | "right" }>`
   }
   left: ${({ mode }) => mode === "left" && "3%"};
   right: ${({ mode }) => mode === "right" && "3%"};
+`;
+
+export const SCarouselWrapper = styled.div`
+  width: 100%;
+  max-height: 60vh;
+  position: relative;
+  &:hover ${SCarouselArrow} {
+    display: block;
+  }
 `;

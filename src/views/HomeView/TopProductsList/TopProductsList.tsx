@@ -1,10 +1,10 @@
-import { useGetTopProducts } from "@src/hooks/useGetTopProducts";
+import { useGetSortedProducts } from "@src/hooks/useGetSortedProducts";
 import { SContainer } from "@src/components/Container";
 import { ProductCard } from "@src/components/ProductCard";
 import { STopProductsList } from "./STopProductsList.styled";
 
 export function TopProductsList() {
-  const { topProducts } = useGetTopProducts();
+  const { topProducts } = useGetSortedProducts();
   return (
     <STopProductsList>
       <SContainer>

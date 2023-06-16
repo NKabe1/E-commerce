@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { navCategories } from "../navCategories/navCategories";
 import { SNavDropdown } from "./SNavDropdown.styled";
@@ -6,40 +6,28 @@ import { FormattedMessage } from "react-intl";
 
 export function NavDropdown() {
   const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
+  const handleMouseEnter = () => {
+    setIsOpen(true);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      dropdownRef.current &&
-      !dropdownRef.current.contains(event.target as Node)
-    ) {
-      setIsOpen(false);
-    }
+  const handleMouseLeave = () => {
+    setIsOpen(false);
   };
 
-  useEffect(() => {
-    window.addEventListener("click", handleClickOutside);
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, []);
+  const handleOnClick = () => {
+    setIsOpen(false);
+  };
 
   return (
-    <SNavDropdown
-      className={`${isOpen ? "shadow-md shadow-indigo-500/50" : ""}`}
-      ref={dropdownRef}
-    >
+    <SNavDropdown onMouseLeave={handleMouseLeave}>
       <div>
         <button
           type="button"
           data-dropdown-toggle="dropdown"
-          onClick={handleToggle}
+          onMouseEnter={handleMouseEnter}
         >
-          <FormattedMessage id="categories"/>
+          <FormattedMessage id="categories" />
           <svg
             fill="none"
             stroke="currentColor"
@@ -59,7 +47,9 @@ export function NavDropdown() {
             {navCategories.map((category: any) => {
               return (
                 <li key={category.id}>
-                  <Link to={category.to} onClick={() => setIsOpen(!isOpen)}>{category.title}</Link>
+                  <Link to={category.to} onClick={handleOnClick}>
+                    {category.title}
+                  </Link>
                 </li>
               );
             })}

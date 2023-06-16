@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useGetTotalNumOfProducts } from "./useGetTotalNumOfProducts";
-import { PaginationLimit } from "@src/components/Pagination/PaginationLimit";
 
 type TProduct = {
   id: number;
@@ -17,8 +16,9 @@ type TProduct = {
   images: string[];
 };
 
-export function useGetTopProducts() {
+export function useGetSortedProducts() {
   const [topProducts, setTopProducts] = useState<TProduct[]>([]);
+  const [expensiveProducts, setExpensiveProducts] = useState<TProduct[]>([]);
   const { total } = useGetTotalNumOfProducts();
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<any>();
@@ -26,11 +26,20 @@ export function useGetTopProducts() {
   const getTopProducts = async () => {
     try {
       setLoading(true);
-      const resp = await axios.get(`https://dummyjson.com/products?limit=${total}`);
-     
-      const sortedProducts = resp.data?.products.sort((a: any, b: any) => b.rating - a.rating).slice(0, PaginationLimit);
+      const resp = await axios.get(
+        `https://dummyjson.com/products?limit=${total}`
+      );
 
-      setTopProducts(sortedProducts);
+      const sortedTopProducts = resp.data?.products
+        .sort((a: any, b: any) => b.rating - a.rating)
+        .slice(0, 12);
+
+      const sortedExpensiveProducts = resp.data.products
+        .sort((a: any, b: any) => b.price - a.price)
+        .slice(0, 12);
+
+      setTopProducts(sortedTopProducts);
+      setExpensiveProducts(sortedExpensiveProducts);
       setLoading(false);
     } catch (error: any) {
       setLoading(false);
@@ -42,5 +51,5 @@ export function useGetTopProducts() {
     getTopProducts();
   }, []);
 
-  return { topProducts };
+  return { topProducts, expensiveProducts };
 }

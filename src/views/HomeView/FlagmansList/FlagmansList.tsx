@@ -1,17 +1,13 @@
 import { useState, useEffect } from "react";
-import { useGetSimilarProducts } from "./hooks/useGetSimilarProducts";
+import { useGetSortedProducts } from "@src/hooks/useGetSortedProducts";
 import { ProductCard } from "@src/components/ProductCard";
+import { SectionTitle } from "@src/components/SectionTitle";
 import { Carousel } from "@src/components/Carousel";
 import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
-import { SSimilarProducts } from "../SProductView.styled";
+import { SFlagmansList } from "./SFlagmansList.styled";
 
-type TProductProps = {
-  product: { id: number; category: string };
-};
-
-export function SimilarProducts({ product }: TProductProps) {
-  let category = product.category;
-  const { similarProducts } = useGetSimilarProducts({ category });
+export function FlagmansList() {
+  const { expensiveProducts } = useGetSortedProducts();
   const [isTabScreen, setIsTabScreen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -41,22 +37,20 @@ export function SimilarProducts({ product }: TProductProps) {
     };
   }, []);
 
-  // excluding the item itself from the category and fetching only 10 items
-  const filteredProducts = similarProducts
-    .filter((item) => item.id !== product.id)
-    .slice(0, 10);
-
   return (
-    <SSimilarProducts>
-      <Carousel
-        slidesToShow={
-          isLargeScreen ? 4 : isSmallScreen ? 3 : isTabScreen ? 2 : 1
-        }
-      >
-        {filteredProducts.map((product, index) => (
-          <ProductCard key={index} product={product} margin={true} />
-        ))}
-      </Carousel>
-    </SSimilarProducts>
+    <SFlagmansList>
+      <SectionTitle>Flagmans სათარგმნი</SectionTitle>
+      <div className="slider">
+        <Carousel
+          slidesToShow={
+            isLargeScreen ? 4 : isSmallScreen ? 3 : isTabScreen ? 2 : 1
+          }
+        >
+          {expensiveProducts.map((product, index) => (
+            <ProductCard key={index} product={product} margin={true} />
+          ))}
+        </Carousel>
+      </div>
+    </SFlagmansList>
   );
 }
