@@ -2,11 +2,12 @@ import styled from "styled-components";
 import { colors } from "@src/assets/styles/colors/colors";
 import { bg_colors } from "@src/assets/styles/colors/colors";
 import { font_sizes } from "@src/assets/styles/fonts/fonts";
+import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
 
 export const SHamburgerMenu = styled.div`
   .burger-bar {
     display: block;
-    @media (min-width: 768px) {
+    @media (min-width: ${responsive_sizes.desktop_small}) {
       display: none;
     }
   }

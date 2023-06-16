@@ -32,7 +32,7 @@ export const SNavContent = styled.div`
     align-items: center;
     margin-left: 24px;
     gap: 12px;
-    @media (min-width: 1280px) {
+    @media (min-width: ${responsive_sizes.tablet}) {
       gap: 24px;
     }
 
@@ -52,7 +52,7 @@ export const SNavContent = styled.div`
           right: 12px;
           background-color: ${bg_colors.dropdown_light};
           border-radius: 50px;
-          padding: 0 8px; 
+          padding: 0 8px;
           margin-right: -22px;
         }
       }
@@ -64,7 +64,7 @@ export const SNavContent = styled.div`
       }
       & > h4 {
         display: none;
-        @media (min-width: 1280px) {
+        @media (min-width: ${responsive_sizes.tablet}) {
           display: block;
         }
       }

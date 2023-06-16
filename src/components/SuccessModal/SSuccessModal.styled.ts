@@ -3,16 +3,12 @@ import tw from "twin.macro";
 import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
 
 export const SSuccessModal = styled.div`
-  ${tw`border p-5 shadow-lg rounded-md bg-emerald-100/95 fixed inset-0 z-50`}
+  ${tw`border p-5 shadow-lg rounded-md bg-emerald-100/95 fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50`}
   height: 180px;
   width: 300px;
-  top: calc(50% - 90px);
-  left: calc(50% - 150px);
   @media (min-width: ${responsive_sizes.tablet}) {
     height: 200px;
     width: 400px;
-    top: calc(50% - 100px);
-    left: calc(50% - 200px);
   }
   .content {
     ${tw`mt-3 text-center`}

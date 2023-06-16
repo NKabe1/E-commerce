@@ -1,16 +1,14 @@
-import { TbSquareRoundedArrowLeftFilled, TbSquareRoundedArrowRightFilled } from "react-icons/tb";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import { SCarouselWrapper, SCarouselArrow } from "./SCarousel.styled";
+import { RiArrowLeftSFill, RiArrowRightSFill } from "react-icons/ri";
 
 function PrevArrow({ style, onClick }: any) {
   return (
     <SCarouselArrow mode="left">
       <div style={{ ...style }} onClick={onClick}>
-        <TbSquareRoundedArrowLeftFilled />
+        <RiArrowLeftSFill />
       </div>
     </SCarouselArrow>
   );
@@ -20,7 +18,7 @@ function NextArrow({ style, onClick }: any) {
   return (
     <SCarouselArrow mode="right">
       <div style={{ ...style }} onClick={onClick}>
-        <TbSquareRoundedArrowRightFilled />
+        <RiArrowRightSFill />
       </div>
     </SCarouselArrow>
   );
@@ -50,3 +48,4 @@ export function Carousel({ children, slidesToShow }: CarouselProps) {
     </SCarouselWrapper>
   );
 }
+
