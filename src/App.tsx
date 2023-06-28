@@ -1,18 +1,9 @@
-import { lazy, Suspense, useCallback, useContext } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { MainLayout } from "./layouts/MainLayout";
-import { PrivateLayout } from "./layouts/PrivateLayout";
+import { Suspense, useCallback, useContext } from "react";
+import { LoadingSpinner } from "./components/LoadingSpinner";
 import { AuthContext, TAuthorizationStage } from "./contexts/AuthContext";
+import { PublicRoutes } from "./views/Public/PublicRoutes";
+import { PrivateRoutes } from "./views/Private/PrivateRoutes";
 
-// ცალკე კომპონენტში შეიძლება გატანა !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-const HomeView = lazy(() => import("./views/HomeView"));
-const ProductsView = lazy(() => import("./views/ProductsView"));
-const ProductView = lazy(() => import("./views/ProductView"));
-const LoginView = lazy(() => import("./views/AuthView/LoginView"));
-const RegisterView = lazy(() => import("./views/AuthView/RegisterView"));
-const CartView = lazy(() => import("./views/CartView/CartView"));
-const CategoryView = lazy(() => import("./views/CategoryView/CategoryView"));
-const ContactUsView = lazy(() => import("./views/ContactUsView/ContactUsView"));
 
 function App() {
   const { status } = useContext(AuthContext);
@@ -20,47 +11,21 @@ function App() {
     switch (status) {
       case TAuthorizationStage.AUTHORIZED: {
         return (
-          <Routes>
-            <Route element={<PrivateLayout />}>
-              <Route path="/" element={<div>Private page</div>} />
-              {/* later I'll add other pages, where authorized user needs to have access to */}
-              <Route path="*" element={<Navigate to="/" />} />
-            </Route>
-          </Routes>
+          <>
+            <PrivateRoutes />
+            <PublicRoutes />
+          </>
         );
       }
       case TAuthorizationStage.UNAUTHORIZED: {
-        return (
-          <Routes>
-            <Route element={<MainLayout />}>
-              <Route path="/" element={<HomeView />} />
-              <Route path="/products" element={<ProductsView />} />
-              <Route path="/categories/:category" element={<CategoryView />} />
-              <Route path="/products/:id" element={<ProductView />} />
-              <Route path="/auth-login" element={<LoginView />} />
-              <Route path="/auth-register" element={<RegisterView />} />
-              <Route path="/cart" element={<CartView />} />
-              <Route path="/contact-us" element={<ContactUsView />} />
-            </Route>
-          </Routes>
-        );
+        return <PublicRoutes />;
       }
     }
   }, []);
+
   return (
     <div>
-      <Suspense fallback={<div>loading...</div>}>
-        {handleRoutes(status)}
-        {/* <Routes>
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<HomeView />} />
-            <Route path="/products" element={<ProductsView />} />
-            <Route path="/products/:id" element={<ProductView />} />
-            <Route path="/auth-login" element={<LoginView />} />
-            <Route path="/auth-register" element={<RegisterView />} />
-          </Route>
-        </Routes> */}
-      </Suspense>
+      <Suspense fallback={<LoadingSpinner />}>{handleRoutes(status)}</Suspense>
     </div>
   );
 }

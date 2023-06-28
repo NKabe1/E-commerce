@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors, bg_colors } from "@src/assets/styles/colors/colors";
 import { font_sizes } from "@src/assets/styles/fonts/fonts";
-import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes"; 
+import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
 
 export const SHeaderTop = styled.div`
   background-color: ${bg_colors.primary};
@@ -18,7 +18,7 @@ export const SHeaderTopContent = styled.div`
     gap: 10px;
     align-items: center;
   }
-  .additional{
+  .additional {
     display: none;
     @media (min-width: ${responsive_sizes.tablet}) {
       display: block;

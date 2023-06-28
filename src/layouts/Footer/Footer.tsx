@@ -21,13 +21,15 @@ export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "auto" });
   };
-  
+
   return (
     <SFooter>
       <SMainContainer>
         <SFooterTop>
-          <h4><FormattedMessage id="connect_w_us"/></h4>
-          
+          <h4>
+            <FormattedMessage id="connect_w_us" />
+          </h4>
+
           <div>
             <p>
               <BsFacebook />
@@ -46,37 +48,67 @@ export function Footer() {
         <SLine />
         <SFooterContent>
           <div>
-            <p><FormattedMessage id="about_us"/></p>
-            <div>
-              <p><FormattedMessage id="about_eshop"/></p>
-              <p><FormattedMessage id="carrers"/></p>
-              <p><FormattedMessage id="partners"/></p>
-              <p><FormattedMessage id="help"/></p>
-            </div>
-          </div>
-          <div>
-            <p><FormattedMessage id="services"/></p>
-            <div>
-              <p><FormattedMessage id="gift"/></p>
-              <p><FormattedMessage id="app"/></p>
-              <p><FormattedMessage id="delivery"/></p>
-              <p><FormattedMessage id="pick_up"/></p>
-            </div>
-          </div>
-          <div>
-            <p><FormattedMessage id="contact"/></p>
+            <p>
+              <FormattedMessage id="about_us" />
+            </p>
             <div>
               <p>
-                <BsTelephone />
-                +995 (32) 2 111 222
+                <FormattedMessage id="about_eshop" />
               </p>
               <p>
-                <TfiEmail />
-                info@eshop.ge
+                <FormattedMessage id="carrers" />
+              </p>
+              <p>
+                <FormattedMessage id="partners" />
+              </p>
+              <p>
+                <FormattedMessage id="help" />
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>
+              <FormattedMessage id="services" />
+            </p>
+            <div>
+              <p>
+                <FormattedMessage id="gift" />
+              </p>
+              <p>
+                <FormattedMessage id="app" />
+              </p>
+              <p>
+                <FormattedMessage id="delivery" />
+              </p>
+              <p>
+                <FormattedMessage id="pick_up" />
+              </p>
+            </div>
+          </div>
+          <div>
+            <p>
+              <FormattedMessage id="contact" />
+            </p>
+            <div>
+              <p>
+                <Link to="tel:+995322111222" className="link">
+                  <BsTelephone />
+                  +995 (32) 2 111 222
+                </Link>
+              </p>
+              <p>
+                <Link
+                  to="mailto:info@eshop.ge"
+                  onClick={scrollToTop}
+                  className="link"
+                >
+                  <TfiEmail />
+                  info@eshop.ge
+                </Link>
               </p>
               <p>
                 <Link to={"/contact-us"} onClick={scrollToTop}>
-                  <FormattedMessage id="feedback"/>
+                  <FormattedMessage id="feedback" />
                 </Link>
               </p>
             </div>

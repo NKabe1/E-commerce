@@ -5,6 +5,8 @@
     "categories": "Categories",
     "search_placeholder": "Search Product",
     "authorization": "Authorization",
+    "profile": "Profile",
+    "logout": "Logout",
     "cart": "Cart",
 
 
@@ -30,6 +32,7 @@
     "account_created": "Account created successfully",
     "having_account": "Already have an account?",
     "login": "Login here",
+    "user_created": "User account created",
 
 
     "navCategories-----------------": "კატეგორიების სექცია",
@@ -48,9 +51,33 @@
     "clear_cart": "Clear Cart",
     "sum": "Sum",
     "total_price": "Total price:",
+    "total_items": "Total items:",
     "buy": "Buy Now",
     "product": "Product",
     "price": "Price",
+    "please_authorize": "Please authorize before payment",
+
+
+    "checkout-----------------------": "checkout სექცია",
+    "payment_info": "Payment info",
+    "complete_order": "Complete your order by providing your payment details.",
+    "card_holder": "Card Holder*",
+    "card_details": "Card Details*",
+    "billing_address": "Billing Address*",
+    "pay_now": "Pay Now",
+    "payment_completed": "Payment Completed",
+    "full_name": "Full name",
+    "street_address": "Street Address",
+
+
+    "admin-page----------------------": "admin-page სექცია",
+    "create_product": "Create new product",
+    "product_title": "Product title",
+    "product_description": "Product description",
+    "product_price": "Product price",
+    "product_category": "Product category",
+    "create": "Create",
+    "product_added": "New product added",
 
 
     "product-cart------------------": "product-cart-ის სექცია",
@@ -106,6 +133,11 @@
     "free_delivery": "Free Delivery",
     "warranty": "Long-term Warranty",
     "similar_products": "Similar products",
+
+
+    "404-view----------------------": "404 view სექცია",
+    "page-not-found": "Page not found",
+    "go-back": "Go back to main page",
 
 
     "footer------------------------": "footer-ის სექცია",
