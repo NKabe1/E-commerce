@@ -81,6 +81,11 @@ export const SFooterContent = styled.div`
           transition: transform 0.2s ease-out;
           color: ${colors.hover_text};
         }
+        & .link {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+        }
       }
     }
   }

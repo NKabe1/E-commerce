@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Header } from "../Header";
+import { HeaderPublic } from "../Header/HeaderPublic";
 import { Footer } from "../Footer";
 import { SMainLayoutWrapper } from "./SMainLayout.styled";
 import { SMainContainer } from "@src/components/MainContainer";
@@ -7,7 +7,7 @@ import { SMainContainer } from "@src/components/MainContainer";
 export function MainLayout() {
   return (
     <div>
-      <Header />
+      <HeaderPublic />
       <SMainLayoutWrapper>
         <SMainContainer>
           <Outlet />

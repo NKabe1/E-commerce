@@ -1,0 +1,1 @@
+export { NavPrivate } from "./NavPrivate";

@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { public_axios } from "@src/utils/public_axios";
 import { TLocalStorage } from "@src/types/localstorage";
 import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
 import { SSection, SForm, SDiv } from "./SLoginView.styled";
-import { FormattedMessage, useIntl } from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 type TLoginInputs = {
   email: string;
@@ -14,6 +14,7 @@ type TLoginInputs = {
 
 export default function LoginView() {
   const { setStatus } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -22,12 +23,12 @@ export default function LoginView() {
   } = useForm<TLoginInputs>();
   async function onSubmit(data: TLoginInputs) {
     try {
-      // ეს ბექის ენდ ფოინთია, ანუ სადაც ვგზავნით
       const resp = await public_axios.post("/auth/signin", data);
-      // ანუ accessToken-ს თუ იღებს front, მხოლოდ მაშინ მოხდება დალოგინება
+      // if accessToken is received, only then can user to login
       if (resp.data.accessToken) {
         localStorage.setItem(TLocalStorage.ACCESSTOKEN, resp.data.accessToken);
         setStatus(TAuthorizationStage.AUTHORIZED);
+        navigate("/");
       }
     } catch (error: any) {
       setError("root", { message: "Email or password is incorrect" });
@@ -92,17 +93,23 @@ export default function LoginView() {
                     />
                   </div>
                   <div className="label-div">
-                    <label><FormattedMessage id="remember_me"/></label>
+                    <label>
+                      <FormattedMessage id="remember_me" />
+                    </label>
                   </div>
                 </div>
-                <a href="#"><FormattedMessage id="forgot_pass"/></a>
+                <a href="#">
+                  <FormattedMessage id="forgot_pass" />
+                </a>
               </SDiv>
 
-              <button type="submit"><FormattedMessage id="sign_in"/></button>
+              <button type="submit">
+                <FormattedMessage id="sign_in" />
+              </button>
               <p>
-                <FormattedMessage id="not_having_account"/>{" "}
+                <FormattedMessage id="not_having_account" />{" "}
                 <Link to="/auth-register" className="link">
-                  <FormattedMessage id="sign_up"/>
+                  <FormattedMessage id="sign_up" />
                 </Link>
               </p>
             </SForm>
