@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, createContext } from "react";
-import { CurrentUserValues } from "@src/providers/CurrentUserProvider";
+import { CurrentUserValues } from "@src/providers/CurrentUserProvider/CurrentUserProvider";
 import { TUser_Role_Enum } from "@src/types/user.types";
 
 export type TCurrentUser = {

@@ -1,8 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "@src/components/Button";
-import { CartModalContext } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext"; 
 import { SuccessModal } from "@src/components/SuccessModal";
 import { StarRating } from "@src/components/StarRating";
 import { BsCurrencyDollar, BsPercent } from "react-icons/bs";
@@ -39,6 +39,7 @@ export default function ProductView() {
   const [chosenQuantity, setChosenQuantity] = useState<number>(1);
   const { cartItems, setCartItems } = useContext(CartModalContext);
   const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
 
   const getSingleProduct = async (product_id: string | undefined) => {
     const resp = await axios.get(
@@ -99,8 +100,8 @@ export default function ProductView() {
   //move to cart view with a delay
   const handleMoveToLink = () => {
     setTimeout(() => {
-      window.location.href = "/cart";
-    }, 2000);
+      navigate("/cart");
+    }, 2500);
   };
 
   return (

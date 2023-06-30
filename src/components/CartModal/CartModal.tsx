@@ -1,6 +1,6 @@
 import { useContext, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartModalContext } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext/CartModalContext";
 import { Button } from "../Button";
 import { CartItem } from "./CartItem";
 import { EmptyCartMessage } from "./EmptyCartMessage";

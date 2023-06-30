@@ -1,7 +1,7 @@
 // ეს გადასაკეთებელია!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 import { useContext, useEffect } from "react";
-import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
+import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext/AuthContext";
 import { TLocalStorage } from "@src/types/localstorage";
 import { private_axios } from "@src/utils/private_axios";
 

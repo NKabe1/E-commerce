@@ -1,6 +1,6 @@
 import { Suspense, useCallback, useContext } from "react";
 import { LoadingSpinner } from "./components/LoadingSpinner";
-import { AuthContext, TAuthorizationStage } from "./contexts/AuthContext";
+import { AuthContext, TAuthorizationStage } from "./contexts/AuthContext/AuthContext";
 import { PublicRoutes } from "./views/Public/PublicRoutes";
 import { PrivateRoutes } from "./views/Private/PrivateRoutes";
 

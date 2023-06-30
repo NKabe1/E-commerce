@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
+import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext/AuthContext";
 import { Button } from "@src/components/Button";
 import { FiLogOut } from "react-icons/fi";
 import { TLocalStorage } from "@src/types/localstorage";

@@ -1,5 +1,5 @@
 import { useState, PropsWithChildren } from "react";
-import { SearchBarContext } from "@src/contexts/SearchBarContext";
+import { SearchBarContext } from "@src/contexts/SearchBarContext"; 
 
 export function SearchBarProvider({ children }: PropsWithChildren) {
   const [searchBarValue, setSearchBarValue] = useState("");

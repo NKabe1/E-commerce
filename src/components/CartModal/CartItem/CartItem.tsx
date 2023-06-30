@@ -2,7 +2,7 @@ import { useContext, useCallback } from "react";
 import { useGetProduct } from "./hooks/useGetProduct";
 import { CgRemove, CgMathMinus, CgMathPlus } from "react-icons/cg";
 import { BsCurrencyDollar } from "react-icons/bs";
-import { CartModalContext } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext/CartModalContext";
 import { SCartItemWrapper } from "./SCartItem.styled";
 
 type CartItemProps = {

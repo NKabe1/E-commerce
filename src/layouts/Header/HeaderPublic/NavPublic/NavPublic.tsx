@@ -9,7 +9,7 @@ import { SNav, SNavContent } from "./SNavPublic.styled";
 import { Hamburger } from "../../HeaderComponents/NavComponents/Hamburger/Hamburger";
 import { SearchBar } from "../../HeaderComponents/NavComponents/SearchBar";
 import { CartModal } from "@src/components/CartModal";
-import { CartModalContext } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext/CartModalContext";
 import { FormattedMessage } from "react-intl";
 
 export function NavPublic() {

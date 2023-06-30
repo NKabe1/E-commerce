@@ -39,6 +39,23 @@
     "categories.smartphones": "სმარტფონები",
     "categories.laptops": "ლეპტოპები",
     "categories.fragrances": "სუნამოები",
+    "categories.skincare": "კანის მოვლა",
+    "categories.groceries": "სურსათი",
+    "categories.home-decoration": "სახლის დეკორი",
+    "categories.furniture": "ავეჯი",
+    "categories.tops": "მაისურები",
+    "categories.womens-dresses": "ქალის კაბები",
+    "categories.womens-shoes": "ქალის ფეხსაცმელი",
+    "categories.mens-shirts": " კაცის პერანგები",
+    "categories.mens-shoes": "კაცის ფეხსაცმელი",
+    "categories.mens-watches": "კაცის საათები",
+    "categories.womens-watches": "ქალის საათები",
+    "categories.womens-bags": "ქალის ჩანთები",
+    "categories.womens-jewellery": "ქალის სამკაული",
+    "categories.sunglasses": "სათვალეები",
+    "categories.automotive": "სათადარიგო ნაწილები",
+    "categories.motorcycle": "მოტოციკლები",
+    "categories.lighting": "განათება",
 
 
     "breadcrump--------------------": "breadcramp-ის სექცია",
@@ -110,6 +127,8 @@
     "all_products": "ყველა პროდუქტი",
     "order": "შეკვეთა საქართველოს მასშტაბით",
     "contact_24/7": "კონტაქტი 24/7",
+    "top_categories": "ტოპ კატეგორიები",
+    "flagmans": "ფლაგმანები",
 
 
     "cookie-modal------------------": "cookie მოდალი",

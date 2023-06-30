@@ -3,7 +3,7 @@ import { Footer } from "../Footer";
 import { SMainLayoutWrapper } from "../MainLayout/SMainLayout.styled";
 import { SMainContainer } from "@src/components/MainContainer";
 import { HeaderPrivate } from "../Header/HeaderPrivate";
-import { CurrentUserProvider } from "@src/providers/CurrentUserProvider";
+import { CurrentUserProvider } from "@src/providers/CurrentUserProvider/CurrentUserProvider";
 
 export function PrivateLayout() {
   return (

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CartModalContext } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext"; 
 import { CartItem } from "@src/components/CartModal/CartItem";
 import { EmptyCartMessage } from "@src/components/CartModal/EmptyCartMessage";
 import { BsCurrencyDollar } from "react-icons/bs";
@@ -8,7 +8,7 @@ import { Button } from "@src/components/Button";
 import { SCartView } from "./SCartView.styled";
 import { FormattedMessage } from "react-intl";
 import { InfoModal } from "@src/components/InfoModal";
-import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
+import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext/AuthContext";
 
 export default function CartView() {
   const { cartItems, setCartItems } = useContext(CartModalContext);

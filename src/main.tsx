@@ -4,26 +4,14 @@ import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import "./assets/styles/index.css";
 import GlobalCss from "./assets/styles/global.css";
-import { AuthProvider } from "./providers/AuthProvider";
-import { CartModalProvider } from "./providers/CartModalProvider";
-import { SearchBarProvider } from "./providers/SearchBarProvider";
-import { PaginateProvider } from "./providers/PaginateProvider";
-import { LocaleProvider } from "./providers/LocaleProvider/LocaleProvider";
+import { Providers } from "./providers";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <LocaleProvider>
-        <PaginateProvider>
-          <SearchBarProvider>
-            <CartModalProvider>
-              <AuthProvider>
-                <App />
-              </AuthProvider>
-            </CartModalProvider>
-          </SearchBarProvider>
-        </PaginateProvider>
-      </LocaleProvider>
+      <Providers>
+        <App />
+      </Providers>
       <GlobalCss />
     </BrowserRouter>
   </React.StrictMode>

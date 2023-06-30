@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FormattedMessage } from "react-intl";
 import { FiLogOut } from "react-icons/fi";
 import { Button } from "@src/components/Button";
-import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
+import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext/AuthContext";
 import { TLocalStorage } from "@src/types/localstorage";
 import { SUserView } from "./SUserView.styled";
 

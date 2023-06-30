@@ -2,8 +2,8 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { CgSearch } from "react-icons/cg";
 import { SSearchBar } from "./SSearchBar.styled";
-import { SearchBarContext } from "@src/contexts/SearchBarContext";
-import { PaginateContext } from "@src/contexts/PaginateContext";
+import { SearchBarContext } from "@src/contexts/SearchBarContext"; 
+import { PaginateContext } from "@src/contexts/PaginateContext"; 
 import { useIntl } from "react-intl";
 
 type TSearchBarProps = {
