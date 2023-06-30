@@ -36,7 +36,7 @@ export function useGetSortedProducts() {
 
       const sortedExpensiveProducts = resp.data.products
         .sort((a: any, b: any) => b.price - a.price)
-        .slice(0, 12);
+        .slice(0, 6);
 
       setTopProducts(sortedTopProducts);
       setExpensiveProducts(sortedExpensiveProducts);

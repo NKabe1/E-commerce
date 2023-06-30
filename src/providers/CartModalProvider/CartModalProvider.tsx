@@ -1,6 +1,6 @@
 import { useState, useEffect, PropsWithChildren } from "react";
-import { CartModalContext } from "@src/contexts/CartModalContext";
-import { cartItemsTypes } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext/CartModalContext"; 
+import { cartItemsTypes } from "@src/contexts/CartModalContext/CartModalContext";
 
 export function CartModalProvider({ children }: PropsWithChildren) {
   const [cartItems, setCartItems] = useState<cartItemsTypes[]>([]);

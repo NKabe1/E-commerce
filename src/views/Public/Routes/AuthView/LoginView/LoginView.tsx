@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { public_axios } from "@src/utils/public_axios";
 import { TLocalStorage } from "@src/types/localstorage";
-import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
+import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext/AuthContext";
 import { SSection, SForm, SDiv } from "./SLoginView.styled";
 import { FormattedMessage } from "react-intl";
 

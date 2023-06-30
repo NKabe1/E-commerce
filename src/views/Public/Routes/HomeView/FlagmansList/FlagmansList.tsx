@@ -5,6 +5,7 @@ import { SectionTitle } from "@src/components/SectionTitle";
 import { Carousel } from "@src/components/Carousel";
 import { responsive_sizes } from "@src/assets/resposive_sizes/responsive_sizes";
 import { SFlagmansList } from "./SFlagmansList.styled";
+import { FormattedMessage } from "react-intl";
 
 export function FlagmansList() {
   const { expensiveProducts } = useGetSortedProducts();
@@ -39,7 +40,7 @@ export function FlagmansList() {
 
   return (
     <SFlagmansList>
-      <SectionTitle>Flagmans სათარგმნი</SectionTitle>
+      <SectionTitle><FormattedMessage id="flagmans"/></SectionTitle>
       <div className="slider">
         <Carousel
           slidesToShow={

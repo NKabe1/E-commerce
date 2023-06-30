@@ -33,7 +33,7 @@ export default function RegisterView() {
   };
 
   async function onSubmit(data: TRegisterInputs) {
-    console.log(data);
+    //console.log(data);
     try {
       const resp = await public_axios.post("/auth/signup", {
         ...data,

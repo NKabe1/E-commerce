@@ -2,7 +2,7 @@ import { lazy, useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import { MainLayout } from "@src/layouts/MainLayout";
 import { PrivateLayout } from "@src/layouts/PrivateLayout";
-import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext";
+import { AuthContext, TAuthorizationStage } from "@src/contexts/AuthContext/AuthContext";
 
 const HomeView = lazy(() => import("./Routes/HomeView"));
 const ProductsView = lazy(() => import("./Routes/ProductsView"));

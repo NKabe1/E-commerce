@@ -1,7 +1,7 @@
 import { PropsWithChildren, useContext, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { TUser_Role_Enum } from "@src/types/user.types";
-import { CurrentUserContext } from "@src/contexts/CurrentUserContext";
+import { CurrentUserContext } from "@src/contexts/CurrentUserContext/CurrentUserContext";
 
 type PrivateRouteProps = {
   roles: TUser_Role_Enum[];

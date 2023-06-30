@@ -9,10 +9,10 @@ import { SNav, SNavContent } from "./SNavPrivate.styled";
 import { Hamburger } from "../../HeaderComponents/NavComponents/Hamburger/Hamburger";
 import { SearchBar } from "../../HeaderComponents/NavComponents/SearchBar";
 import { CartModal } from "@src/components/CartModal";
-import { CartModalContext } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext/CartModalContext";
 import { FormattedMessage } from "react-intl";
 import { TUser_Role_Enum } from "@src/types/user.types";
-import { CurrentUserContext } from "@src/contexts/CurrentUserContext";
+import { CurrentUserContext } from "@src/contexts/CurrentUserContext/CurrentUserContext";
 
 export function NavPrivate() {
   const [showModal, setShowModal] = useState<boolean>(false);

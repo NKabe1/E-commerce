@@ -39,6 +39,23 @@
     "categories.smartphones": "Smartphones",
     "categories.laptops": "Laptops",
     "categories.fragrances": "Fragrances",
+    "categories.skincare": "Skincare",
+    "categories.groceries": "Groceries",
+    "categories.home-decoration": "Home-decoration",
+    "categories.furniture": "Furniture",
+    "categories.tops": "Tops",
+    "categories.womens-dresses": "Womens-dresses",
+    "categories.womens-shoes": "Womens-shoes",
+    "categories.mens-shirts": "Mens-shirts",
+    "categories.mens-shoes": "Mens-shoes",
+    "categories.mens-watches": "Mens-watches",
+    "categories.womens-watches": "Womens-watches",
+    "categories.womens-bags": "Womens-bags",
+    "categories.womens-jewellery": "Womens-jewellery",
+    "categories.sunglasses": "Sunglasses",
+    "categories.automotive": "Automotive",
+    "categories.motorcycle": "Motorcycle",
+    "categories.lighting": "Lighting",
 
 
     "breadcrump--------------------": "breadcramp-ის სექცია",
@@ -110,6 +127,8 @@
     "all_products": "All Products",
     "order": "Georgian-wide Ordering",
     "contact_24/7": "Contact Us 24/7",
+    "top_categories": "Top Categories",
+    "flagmans": "Flagmans",
 
 
     "cookie-modal------------------": "cookie მოდალი",

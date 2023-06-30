@@ -3,7 +3,7 @@ import { ProductsList } from "./ProductsList";
 import { SectionTitle } from "@src/components/SectionTitle";
 import { useGetTotalNumOfProducts } from "@src/hooks/useGetTotalNumOfProducts";
 import { useGetProducts } from "@src/hooks/useGetProducts";
-import { SearchBarContext } from "@src/contexts/SearchBarContext";
+import { SearchBarContext } from "@src/contexts/SearchBarContext"; 
 import { SNotification, SNoProducts } from "./SProductsView.styled";
 import { FormattedMessage } from "react-intl";
 

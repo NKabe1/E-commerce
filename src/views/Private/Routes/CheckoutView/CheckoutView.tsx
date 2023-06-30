@@ -30,11 +30,47 @@ export default function CheckoutView() {
     });
   };
 
+  const handleCardNumberValidate = (event: any) => {
+    const input = event.target.value;
+    const formattedInput = input
+      .replace(/[^\d]/g, "") // remove non-digit characters
+      .replace(/(.{4})/g, "$1 ") // insert space after every 4 characters
+      .trim(); // remove leading/trailing spaces
+
+    setPaymentValues((prev) => ({ ...prev, cardNumber: formattedInput }));
+  };
+
+  const handleCardNumberChange = (event: any) => {
+    handleInputChange(event);
+    handleCardNumberValidate(event);
+  };
+
+  const handleCardDateValidate = (event: any) => {
+    const input = event.target.value;
+    let formattedInput = input.replace(/[^\d]/g, ""); // remove non-digit characters
+
+    if (formattedInput.length > 2) {
+      formattedInput =
+        formattedInput.slice(0, 2) + "/" + formattedInput.slice(2);
+    }
+
+    setPaymentValues((prev) => ({ ...prev, cardExpireDate: formattedInput }));
+  };
+
+  const handleCardDateChange = (event: any) => {
+    handleInputChange(event);
+    handleCardDateValidate(event);
+  };
+
   const handleShowModal = () => {
     setShowModal(true);
     setTimeout(() => {
       setShowModal(false);
     }, 3000);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "auto" });
   };
 
   const handlePayment = (event: any) => {
@@ -53,6 +89,7 @@ export default function CheckoutView() {
     setTimeout(() => {
       navigate("/");
     }, 3000);
+    scrollToTop();
   };
 
   return (
@@ -149,15 +186,15 @@ export default function CheckoutView() {
             <div className="relative w-7/12 flex-shrink-0">
               <input
                 type="text"
-                pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}"
+                pattern="[0-9]{4}( [0-9]{4}){3}"
                 maxLength={19}
                 id="card-no"
                 name="cardNumber"
                 value={paymentValues.cardNumber}
                 className="input-common input-w-icon"
-                placeholder="xxxx-xxxx-xxxx-xxxx"
+                placeholder="xxxx xxxx xxxx xxxx"
                 required
-                onChange={handleInputChange}
+                onChange={handleCardNumberChange}
               />
               <div className="input-icon">
                 <svg
@@ -182,7 +219,7 @@ export default function CheckoutView() {
               className="input-common w-full"
               placeholder="MM/YY"
               required
-              onChange={handleInputChange}
+              onChange={handleCardDateChange}
             />
             <input
               type="text"

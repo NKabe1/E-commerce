@@ -5,7 +5,7 @@ import { FiShoppingCart } from "react-icons/fi";
 import { StarRating } from "../StarRating";
 import { Link } from "react-router-dom";
 import { Button } from "../Button";
-import { CartModalContext } from "@src/contexts/CartModalContext";
+import { CartModalContext } from "@src/contexts/CartModalContext/CartModalContext";
 import { SuccessModal } from "../SuccessModal";
 import { FormattedMessage } from "react-intl";
 
